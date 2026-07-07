@@ -1,0 +1,13 @@
+This material is from Spanish 3.
+
+Please organize content where possible into:
+- chapter / lesson
+- vocabulary
+- grammar
+- verbs / conjugation
+- expressions
+- notes
+
+Prioritize study usefulness over literal extraction.
+If extraction is uncertain, send it through a manual review/edit step.
+The end goal is a polished personal study app for phone use.

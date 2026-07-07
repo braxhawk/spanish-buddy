@@ -1,0 +1,395 @@
+/* PIN Screen */
+.pin-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.pin-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.pin-card h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.pin-card p {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.pin-card form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.pin-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  font-size: 1.4rem;
+  text-align: center;
+  letter-spacing: 0.3em;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.pin-input:focus {
+  border-color: #4f46e5;
+}
+
+.pin-input.pin-error {
+  border-color: #fc8181;
+}
+
+.pin-error-msg {
+  color: #e53e3e;
+  font-size: 0.85rem;
+}
+
+/* Sync indicator */
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sync-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.sync-idle { background: #cbd5e0; }
+.sync-saving { background: #f6ad55; }
+.sync-saved { background: #68d391; }
+.sync-error { background: #fc8181; }
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+/* Progress */
+.progress-bar {
+  background: #e2e8f0;
+  border-radius: 99px;
+  height: 8px;
+  margin: 8px 0 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #4f46e5;
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.8rem;
+  color: #718096;
+  text-align: center;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  border-radius: 99px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: #4a5568;
+}
+
+.filter-btn:active {
+  transform: scale(0.96);
+}
+
+.filter-btn.active {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: white;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  background: #4f46e5;
+  color: white;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+/* Card area */
+.card-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.card-counter {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+/* Flip card */
+.flip-card {
+  width: 100%;
+  height: 260px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+}
+
+.flip-card-front {
+  background: white;
+}
+
+.flip-card-back {
+  background: #4f46e5;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card-lang-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 12px;
+}
+
+.card-word {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.card-pos {
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.55;
+  margin-bottom: 14px;
+}
+
+.card-example {
+  font-size: 0.85rem;
+  text-align: center;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+.card-hint {
+  font-size: 0.75rem;
+  opacity: 0.4;
+  margin-top: 16px;
+}
+
+/* Card actions */
+.card-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-learned {
+  flex: 1;
+  max-width: 200px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #48bb78;
+  background: white;
+  color: #276749;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-learned.learned {
+  background: #48bb78;
+  color: white;
+}
+
+.btn-learned:active {
+  transform: scale(0.96);
+}
+
+.btn-next {
+  flex: 1;
+  max-width: 200px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-next:active {
+  transform: scale(0.96);
+}
+
+/* Learned pile */
+.learned-section {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f0fff4;
+  border-radius: 16px;
+  border: 2px solid #9ae6b4;
+}
+
+.learned-section h2 {
+  font-size: 1rem;
+  color: #276749;
+  margin-bottom: 10px;
+}
+
+.learned-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.learned-chip {
+  background: white;
+  border: 1px solid #9ae6b4;
+  border-radius: 99px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  color: #276749;
+  cursor: pointer;
+}
+
+.learned-chip:active {
+  background: #9ae6b4;
+}
+
+/* Done state */
+.done-card {
+  width: 100%;
+  text-align: center;
+  padding: 48px 24px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.done-card h2 {
+  font-size: 1.4rem;
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.done-card p {
+  color: #718096;
+  margin-bottom: 20px;
+}
